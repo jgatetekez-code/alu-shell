@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=5; $(echo "$WATER" | tr 'water' '01234') + $(echo "$STIR" | tr 'stir' '0123')" | bc | tr '01234567' 'bestchol'
+echo "$WATER $STIR" | tr 'waterstir' '0123401234' | awk '{printf "%o\n", $1 + $2}' | tr '01234567' 'bestchol'
