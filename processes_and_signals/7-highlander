@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# using the pkill command to stop all processes labelled with 4-to_infinity_and_beyond
+# this script listens to SIGTERM and triggers a message "I am invincible"
 
-pkill -f 7-highlander
+trap 'echo "I am invincible!!!"' SIGTERM
+
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
